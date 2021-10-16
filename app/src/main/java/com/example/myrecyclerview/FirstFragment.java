@@ -33,6 +33,7 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rvContacts = binding.rvContacts;
+        TextView textView = binding.textviewFirst;
 
         // Initialize contacts
         ArrayList<Contact> contacts = Contact.createContactsList(20);
@@ -71,6 +72,7 @@ public class FirstFragment extends Fragment {
 
 //                Snackbar.make(view, "Visible contacts are: "+ sb.toString(), Snackbar.LENGTH_SHORT)
 ////                        .setAction("Action", null).show();
+                textView.setText("Completely visible:"+sb.toString());
                 Log.e("Visible contacts are:", sb.toString());
 
                 if (llm.findLastVisibleItemPosition() == adapter.getItemCount() - 5) {
